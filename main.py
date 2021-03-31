@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, url_for
+import prediction as pred
+
 app=Flask(__name__, static_folder='static', template_folder='templates')
 import headline as hd
 
@@ -6,8 +8,15 @@ import headline as hd
 def index():
 	return render_template('index.html')
 
-@app.route('/home')
+@app.route('/home',methods=['POST','GET'])
 def home():
+	if request.method=='POST':
+		msg=request.form.get('Search')
+		if msg=="":
+			return render_template('index.html')
+		msg,prob=pred.detecting_fake_news(msg)
+		res={'message':msg, 'probability': prob}
+		return render_template('result.html', data=res)
 	return render_template('index.html')
 
 @app.route('/headline')
