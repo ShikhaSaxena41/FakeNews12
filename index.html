@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>CoolName</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">	
+<!-- bootstrap css -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!-- style css -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Responsive-->
+<link rel="stylesheet" href="css/responsive.css">
+<!-- fevicon -->
+<link rel="icon" href="images/fevicon.png" type="image/gif" />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+<!-- Tweaks for older IEs-->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<!-- owl stylesheets --> 
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+</head>
+<body>
+	<!-- header section start -->
+	<div class="header_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-lg-3">
+					<div class="logo"><a href="index.html"><img src="images/logo.jpg"></a></div>
+				</div>
+				<div class="col-sm-6">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                           <a class="nav-item nav-link" href="#">Home</a>
+                           
+						    <div class="nav-item nav-link">
+								<a class="nav-item nav-link" href="hotTopics.html" >Hot Topics</a>
+								<!--<div class="dropdown-content">
+									<a href="">Coronavirus</a>
+									<a href="">Vaccination</a>
+									<a href=""> Politics </a>
+									<a href="">Economy</a>
+									<a href="">Climate change</a>
+									<a href="">Elections</a>
+									<a href="">Sport</a>
+									<a href="">More</a>
+								</div>-->
+								
+						  	</div>
+                           <a class="nav-item nav-link" data-toggle="modal" data-target="#aboutModal" role="button">About </a>
+                           
+                           <a class="nav-item nav-link" data-toggle="modal" data-target="#contactModal" role="button">Contact</a>
+                        </div>
+						
+                    </div>
+                    </nav>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="layout_padding banner_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					
+					<p class="browse_text"> A fake news website can spread fake news faster than real news </p>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="container">
+		<div class="search_box">
+			<div class="row">
+				<div class="col-sm-9">
+					<div class="form-group">
+                        <input type="text" class="urlbutton" placeholder="Enter URL to be checked" name="Search">
+                    </div>
+				</div>
+				
+				<div class="col-sm-3">
+					<div class="form-group">
+                        <button class="search_bt">Search</button>
+                    </div>
+				</div>
+				<div class="menu">
+                    	<ul>
+                    		<li class="active"><a href="#">Coronavirus</a></li>
+                    		<li><a href="">Vaccination</a></li>
+                    		<li><a href="">Politics </a></li>
+                    		<li><a href="">Economy</a></li>
+                    		<li><a href="">Climate change</a></li>
+                    		<li><a href="">Elections</a></li>
+                    		<li><a href="">Sport</a></li>
+                    		
+                    	</ul>
+                    </div>
+			</div>
+		</div>
+	</div>
+	<div id="contactModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Contact Us</h4>
+                    <button type="button" class="close" data-dismiss="modal" id="closeButton">&times;</button>
+                </div>
+                <div class= "modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group ">
+								<label class="col-sm-2 col-form-label" for="exampleInputName">Name</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control form-control" id="exampleInputName" placeholder="Enter name">
+								</div>
+							</div>
+							<div class="form-group ">
+                                <label class="col-sm-2 col-form-label" for="exampleInputEmail3">Email address</label>
+								<div class="col-sm-10">
+                                    <input type="email" class="form-control form-control" id="exampleInputEmail3" placeholder="Enter email">
+								</div>
+                            </div>
+							<div class="form-group ">
+								<label class="col-sm-2 col-form-label" for="exampleFormControlTextarea1">Message</label>
+								<div class="col-sm-10">
+									<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Enter your message"></textarea>
+								</div>
+							</div>
+                            
+                        
+                        </div>
+                        <div class="form-row">
+							<button type="submit" class="btn btn-success btn-sm ml-auto">Submit</button>
+                            <button type="button" class="btn btn-danger btn-sm ml-1" data-dismiss="modal">Cancel</button>
+                                    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<div id="aboutModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title">About Us</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  <p>  We monitor the  accuracy of news  in the form of debates, speeches, interviews and news releases online. Our goal is to apply the best practices of both journalism and scholarship, and to increase public knowledge and understanding.</p>
+			</div>
+			<div class="modal-footer">
+			  
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <div id="copyrightModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title">Copyright Policy</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  <p>Except as permitted by the copyright law applicable to you, you may not reproduce or communicate any of the content on this website, including files downloadable from this website, without the permission of the copyright owner.</p>
+			</div>
+			<div class="modal-footer">
+			  
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	
+
+    <div class="layout_padding popular_section">
+    	<div class="container">
+    		<h1 class="popular_title">POPULAR <span style="border-bottom: 5px solid #4bc714;">STORIES</span></h1>
+    		<div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="popular_section_2">
+    			    <div class="slider_img"><img src="images/img-511.jpg" style="max-width: 100%;"></div>
+    			        <h2 class="electronic_text">News1</h2>
+    			        <p class="contrary_text">Some famous recent fake news</p>
+                        <button class="view_bt"><a href="">VIEW </a></button>
+    		        </div>
+                </div>
+            <div class="carousel-item">
+                <div class="popular_section_2">
+    			    <div class="slider_img"><img src="images/img-52.jpg"style="max-width: 100%;"></div>
+    			        <h2 class="electronic_text">News2</h2>
+    			        <p class="contrary_text">Some other recent fake news</p>
+                        <button class="view_bt"><a href="">VIEW </a></button>
+    		        </div>
+                </div>
+            <div class="carousel-item">
+                <div class="popular_section_2">
+    			    <div class="slider_img"><img src="images/img-53.jpg" style="max-width: 100%;"></div>
+    			    <h2 class="electronic_text">News3</h2>
+    			    <p class="contrary_text">Random not so famous reent fake news</p>
+                    <button class="view_bt"><a href="
+						">VIEW</a></button>
+    		    </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#main_slider" role="button" data-slide="prev">
+            <i class="fa fa-angle-right"></i>
+        </a>
+
+    </div>
+    </div>
+    </div>
+	
+	
+    <div class="layout_padding about_section">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-sm-12">
+    				<h1 class="about_title">Why Fake News is a big problem</h1>
+    				<p class="ltext"> About 45 percent of the respondents of a survey about fake news in the Indian media said they had seen stories that were completely made up for political or commercial reasons. Fake news is a pressing issue for today's socio-political environment and it is getting harder to differentiate between misleading information from the real facts.</p>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+	
+	
+	
+	<div class="layout_padding footer_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					<h1 class="quick_text">Reach us on </h1>
+					<ul class="social-network social-circle"></ul>
+						<li><a href="http://www.linkedin.com/in" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin fa-md"></i></a></li>
+						<li><a href="http://www.facebook.com/profile.php?id=" class="icoFacebook" title="Facebook"><i class="fa fa-facebook fa-md"></i></a></li>
+                    	<li><a href="http://twitter.com" class="icoTwitter" title="Twitter"><i class="fa fa-twitter fa-md"></i></a></li>
+						<li><a href="http://google.com/+" class="icoGoogle" title="Google+"><i class="fa fa-google-plus fa-md"></i></a></li>
+                    	<li><a href="mailto:" class="icoMail" title="Mail"><i class="fa fa-envelope-o fa-md"></i></a></li>
+            		</ul>		
+					
+						
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					<h1 class="quick_text">Quick links</h1>
+					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a href="#">Search</a></span></div>
+					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a href="#">Report Results</a></span></div>
+					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"></span><a class="nav-item nav-link" data-toggle="modal" data-target="#aboutModal">About Us</a></span></div>
+					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact Us</a></span></div>
+					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a class="nav-item nav-link" data-toggle="modal" data-target="#copyrightModal">Copyright Policy</a></span></div>
+				</div>
+				
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					<h1 class="quick_text">Address</h1>
+					<div class="map_flag"><img src="images/map-flag.png"><span class="padding-left">Indore</span></div>
+					<div class="dolor_text"><img src="images/email-icon.png"><span class="padding-left">CoolName@gmail.com</span></div>
+					<div class="dolor_text"><img src="images/phone-icon.png"><span class="padding-left">+12345678</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+   
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+         openEffect: "none",
+         closeEffect: "none"
+         });
+         
+         $(".zoom").hover(function(){
+         
+         $(this).addClass('transition');
+         }, function(){
+         
+         $(this).removeClass('transition');
+         });
+         });
+         
+      </script> 
+    
+</body>
+</html>
