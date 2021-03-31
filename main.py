@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for
 app=Flask(__name__, static_folder='static', template_folder='templates')
+import headline as hd
 
 @app.route('/')
 def index():
@@ -11,7 +12,8 @@ def home():
 
 @app.route('/headline')
 def headline():
-	return render_template('hotTopics.html')
+	news_data=hd.main()
+	return render_template('hotTopics.html',data=news_data)
 
 
 if __name__=='__main__':

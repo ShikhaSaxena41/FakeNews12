@@ -83,18 +83,18 @@
 	<div class=" layout_padding promoted_sectipon">
 		<div class="container">
 			<h1 class="promoted_text">Headlines<span style="border-bottom: 5px solid #4bc714;"></span></h1>
-			<div class="news1">
-				
-				
-			</div>
-			<div class="news2">
-				
+			<table>
+				{% for i in data.index %}
 
-			</div>
-			<div class="news2">
-				
+					<tr>
+						
+						<th>{{ i }}</th>
+						<td>{{data['description'][i]}}</td>
 
-			</div>
+					</tr>
+
+				{% endfor %}
+			</table>
 
 		</div>
 	</div>
