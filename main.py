@@ -11,12 +11,12 @@ def index():
 @app.route('/home',methods=['POST','GET'])
 def home():
 	if request.method=='POST':
-		msg=request.form.get('Search')
-		if msg=="":
+		msg1=request.form.get('Search')
+		if msg1=="":
 			return render_template('index.html')
-		msg,prob=pred.detecting_fake_news(msg)
+		msg,prob=pred.detecting_fake_news(msg1)
 		res={'message':msg, 'probability': prob}
-		return render_template('result.html', data=res)
+		return render_template('result.html', data=res, msg=msg1)
 	return render_template('index.html')
 
 @app.route('/headline')
