@@ -3,6 +3,7 @@ import requests
 import numpy as np
 import os
 import pandas as pd
+
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
 
 def news_list_request(news_list, news_table_tr, tag):
