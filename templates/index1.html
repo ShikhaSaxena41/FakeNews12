@@ -37,7 +37,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-lg-3">
-					<div class="logo"><a href={{url_for("home")}}><img src="images/logo.jpg"></a></div>
+					<div class="logo"><a href={{url_for("home")}}><img src="{{ url_for('static', filename='images/logo.jpg')}}"></a></div>
 				</div>
 				<div class="col-sm-6">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -47,21 +47,8 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                            <a class="nav-item nav-link" href="#">Home</a>
-                           
-						    <div class="nav-item nav-link">
-								<a class="nav-item nav-link" href={{url_for('headline')}} >Hot Topics</a>
-								<!--<div class="dropdown-content">
-									<a href="">Coronavirus</a>
-									<a href="">Vaccination</a>
-									<a href=""> Politics </a>
-									<a href="">Economy</a>
-									<a href="">Climate change</a>
-									<a href="">Elections</a>
-									<a href="">Sport</a>
-									<a href="">More</a>
-								</div>-->
-								
-						  	</div>
+                           <a class="nav-item nav-link" href={{url_for('headline')}} >Hot Topics</a>
+						   
                            <a class="nav-item nav-link" data-toggle="modal" data-target="#aboutModal" role="button">About </a>
                            
                            <a class="nav-item nav-link" data-toggle="modal" data-target="#contactModal" role="button">Contact</a>
@@ -91,33 +78,41 @@
 
 	<div class="container">
 		<div class="search_box">
+			{% block content %}
+			<form class ="example" action={{url_for('home')}} method="POST">
 			<div class="row">
+				
 				<div class="col-sm-9">
 					<div class="form-group">
-                        <input type="text" class="urlbutton" placeholder="Enter URL/text" name="Search">
+                        <input type="text" class="urlbutton" placeholder="Enter URL/TEXT" name="Search">
                     </div>
 				</div>
 				
 				<div class="col-sm-3">
 					<div class="form-group">
-                        <button type='submit' class="search_bt">Search</button>
+                        <button type="submit" class="search_bt" >Search</button>
                     </div>
 				</div>
+				
 				<div class="menu">
                     	<ul>
-                    		<li class="active"><a href="#">Coronavirus</a></li>
-                    		<li><a href="">Vaccination</a></li>
-                    		<li><a href="">Politics </a></li>
-                    		<li><a href="">Economy</a></li>
-                    		<li><a href="">Climate change</a></li>
-                    		<li><a href="">Elections</a></li>
-                    		<li><a href="">Sport</a></li>
+                    		<li class="active"><a href="https://news.google.com/search?q=coronavirus">Coronavirus</a></li>
+                    		<li><a href="https://news.google.com/search?q=coronavirus-vaccination">Vaccination</a></li>
+                    		<li><a href="https://news.google.com/search?q=india-politics">Politics </a></li>
+                    		<li><a href="https://news.google.com/search?q=india-economy">Economy</a></li>
+                    		<li><a href="https://news.google.com/search?q=weather">Climate change</a></li>
+                    		<li><a href="https://news.google.com/search?q=india-election">Elections</a></li>
+                    		<li><a href="https://news.google.com/search?q=sports">Sport</a></li>
                     		
                     	</ul>
                     </div>
 			</div>
+		</form>
+		{% endblock %}
 		</div>
 	</div>
+
+
 	<div id="contactModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
@@ -126,24 +121,24 @@
                     <button type="button" class="close" data-dismiss="modal" id="closeButton">&times;</button>
                 </div>
                 <div class= "modal-body">
-                    <form>
+                    <form action={{url_for('contact')}} method="POST">
                         <div class="form-row">
                             <div class="form-group ">
 								<label class="col-sm-2 col-form-label" for="exampleInputName">Name</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control form-control" id="exampleInputName" placeholder="Enter name">
+									<input type="text" class="form-control form-control" id="exampleInputName" name="name" placeholder="Enter name">
 								</div>
 							</div>
 							<div class="form-group ">
                                 <label class="col-sm-2 col-form-label" for="exampleInputEmail3">Email address</label>
 								<div class="col-sm-10">
-                                    <input type="email" class="form-control form-control" id="exampleInputEmail3" placeholder="Enter email">
+                                    <input type="email" class="form-control form-control" id="exampleInputEmail3" name="email" placeholder="Enter email">
 								</div>
                             </div>
 							<div class="form-group ">
 								<label class="col-sm-2 col-form-label" for="exampleFormControlTextarea1">Message</label>
 								<div class="col-sm-10">
-									<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Enter your message"></textarea>
+									<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Enter your message" name="message"></textarea>
 								</div>
 							</div>
                             
@@ -274,18 +269,18 @@
 				</div>
 				<div class="col-sm-12 col-md-12 col-lg-4">
 					<h1 class="quick_text">Quick links</h1>
-					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a href="#">Search</a></span></div>
-					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a href="#">Report Results</a></span></div>
-					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"></span><a class="nav-item nav-link" data-toggle="modal" data-target="#aboutModal">About Us</a></span></div>
-					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact Us</a></span></div>
-					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a class="nav-item nav-link" data-toggle="modal" data-target="#copyrightModal">Copyright Policy</a></span></div>
+					<div class="chevron_arrow"><img src="{{ url_for('static', filename='images/chevron-arrow.png')}}"><span class="padding-left"><a href="#">Search</a></span></div>
+					<div class="chevron_arrow"><img src="{{ url_for('static', filename='images/chevron-arrow.png')}}"><span class="padding-left"><a href="#">Report Results</a></span></div>
+					<div class="chevron_arrow"><img src="{{ url_for('static', filename='images/chevron-arrow.png')}}"><span class="padding-left"></span><a class="nav-item nav-link" data-toggle="modal" data-target="#aboutModal">About Us</a></span></div>
+					<div class="chevron_arrow"><img src="{{ url_for('static', filename='images/chevron-arrow.png')}}"><span class="padding-left"><a class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact Us</a></span></div>
+					<div class="chevron_arrow"><img src="{{ url_for('static', filename='images/chevron-arrow.png')}}"><span class="padding-left"><a class="nav-item nav-link" data-toggle="modal" data-target="#copyrightModal">Copyright Policy</a></span></div>
 				</div>
 				
 				<div class="col-sm-12 col-md-12 col-lg-4">
 					<h1 class="quick_text">Address</h1>
-					<div class="map_flag"><img src="images/map-flag.png"><span class="padding-left">Indore</span></div>
-					<div class="dolor_text"><img src="images/email-icon.png"><span class="padding-left">CoolName@gmail.com</span></div>
-					<div class="dolor_text"><img src="images/phone-icon.png"><span class="padding-left">+12345678</span></div>
+					<div class="map_flag"><img src="{{ url_for('static', filename='images/map-flag.png')}}"><span class="padding-left">Indore</span></div>
+					<div class="dolor_text"><img src="{{ url_for('static', filename='images/email-icon.png')}}"><span class="padding-left">CoolName@gmail.com</span></div>
+					<div class="dolor_text"><img src="{{ url_for('static', filename='images/phone-icon.png')}}"><span class="padding-left">+12345678</span></div>
 				</div>
 			</div>
 		</div>

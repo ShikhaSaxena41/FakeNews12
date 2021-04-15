@@ -62,7 +62,7 @@
 								</div>-->
 								
 						  	</div>
-                           <a class="nav-item nav-link" href="about.html">About </a>
+							  <a class="nav-item nav-link" data-toggle="modal" data-target="#aboutModal" role="button">About </a>
                            
                            <a class="nav-item nav-link" data-toggle="modal" data-target="#contactModal" role="button">Contact</a>
                         </div>
@@ -79,10 +79,92 @@
 		</div>
 	</div>
 	
+	<div id="copyrightModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" style="color:floralwhite ; font-size: 25px;">Copyright Policy</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  <p>Except as permitted by the copyright law applicable to you, you may not reproduce or communicate any of the content on this website, including files downloadable from this website, without the permission of the copyright owner.</p>
+			</div>
+			<div class="modal-footer">
+			  
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <div id="aboutModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" style="color:floralwhite ; font-size: 25px;">About Us</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  <blockquote class="blockquote">	
+			  <p class="mb-2">  We monitor the  accuracy of news  in the form of debates, speeches, interviews and news releases online. Our goal is to apply the best practices of both journalism and scholarship, and to increase public knowledge and understanding.</p>
+			  </blockquote>
+			</div>
+			<div class="modal-footer">
+			  
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <div id="contactModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="color:floralwhite ; font-size: 25px;">Contact Us</h4>
+                    <button type="button" class="close" data-dismiss="modal" id="closeButton">&times;</button>
+                </div>
+                <div class= "modal-body">
+                    <form>
+                        <div class="form-row">
+                            <label class="col-sm-2 col-form-label" for="exampleInputName" style="color: black; font-size: 20px;">Name</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control form-control" id="exampleInputName" placeholder="Enter name">
+								</div></div>
+							<div class="form-row ">
+                                <label class="col-sm-2 col-form-label" for="exampleInputEmail3" style="color: black; font-size: 20px;">Email </label>
+								<div class="col-sm-10">
+                                    <input type="email" class="form-control form-control" id="exampleInputEmail3" placeholder="Enter email">
+								</div>
+                            </div>
+							<div class="form-row ">
+								<label class="col-sm-2 col-form-label" for="exampleFormControlTextarea1" style="color: black; font-size: 20px;">Message</label>
+								<div class="col-sm-10">
+									<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Enter your message"></textarea>
+								</div>
+							</div>
+                            
+                        
+                        </div>
+                        <div class="form-row">
+							<button type="submit" class="btn btn-success btn-sm ml-auto">Submit</button>
+                            <button type="button" class="btn btn-danger btn-sm ml-1" data-dismiss="modal">Cancel</button>
+                                    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<div class=" layout_padding promoted_sectipon">
 		<div class="container">
 			<h1 class="promoted_text">Headlines<span style="border-bottom: 5px solid #4bc714;"></span></h1>
+			{{ pagination.links }}
 			<table>
 				{% for i in data.index %}
 
@@ -95,39 +177,41 @@
 
 				{% endfor %}
 			</table>
-
+			{{ pagination.links }}
 		</div>
 	</div>
 	
+	
+
 	<div class="layout_padding footer_section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-4">
 					<h1 class="quick_text">Reach us on </h1>
-					<ul class="social-network social-circle"></ul>
-						<li><a href="http://www.linkedin.com/in" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin fa-md"></i></a></li>
-						<li><a href="http://www.facebook.com/profile.php?id=" class="icoFacebook" title="Facebook"><i class="fa fa-facebook fa-md"></i></a></li>
-                    	<li><a href="http://twitter.com" class="icoTwitter" title="Twitter"><i class="fa fa-twitter fa-md"></i></a></li>
-						<li><a href="http://google.com/+" class="icoGoogle" title="Google+"><i class="fa fa-google-plus fa-md"></i></a></li>
-                    	<li><a href="mailto:" class="icoMail" title="Mail"><i class="fa fa-envelope-o fa-md"></i></a></li>
+					<ul class="social-network social-circle">
+						<li><a href="http://www.linkedin.com/in" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin fa-2x"></i></a></li>
+						<li><a href="http://www.facebook.com/profile.php?id=" class="icoFacebook" title="Facebook"><i class="fa fa-facebook fa-2x"></i></a></li>
+                    	<li><a href="http://twitter.com" class="icoTwitter" title="Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
+						<li><a href="http://google.com/+" class="icoGoogle" title="Google+"><i class="fa fa-google-plus fa-2x"></i></a></li>
+                    	<li><a href="mailto:" class="icoMail" title="Mail"><i class="fa fa-envelope-o fa-2x"></i></a></li>
             		</ul>		
 					
 						
 				</div>
 				<div class="col-sm-12 col-md-12 col-lg-4">
 					<h1 class="quick_text">Quick links</h1>
-					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a href="#">Search</a></span></div>
-					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a href="#">Report Results</a></span></div>
-					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"></span><a class="nav-item nav-link" data-toggle="modal" data-target="#aboutModal">About Us</a></span></div>
-					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact Us</a></span></div>
-					<div class="chevron_arrow"><img src="images/chevron-arrow.png"><span class="padding-left"><a class="nav-item nav-link" data-toggle="modal" data-target="#copyrightModal">Copyright Policy</a></span></div>
+					<div class="chevron_arrow"><img src="{{ url_for('static', filename='images/chevron-arrow.png')}}"><span class="padding-left"><a href="#">Search</a></span></div>
+					<div class="chevron_arrow"><img src="{{ url_for('static', filename='images/chevron-arrow.png')}}"><span class="padding-left"><a href="#">Report Results</a></span></div>
+					<div class="chevron_arrow"><img src="{{ url_for('static', filename='images/chevron-arrow.png')}}"><span class="padding-left"><a  data-toggle="modal" data-target="#aboutModal">About Us</a></span></div>
+					<div class="chevron_arrow"><img src="{{ url_for('static', filename='images/chevron-arrow.png')}}"><span class="padding-left"><a  data-toggle="modal" data-target="#contactModal">Contact Us</a></span></div>
+					<div class="chevron_arrow"><img src="{{ url_for('static', filename='images/chevron-arrow.png')}}"><span class="padding-left"><a  data-toggle="modal" data-target="#copyrightModal">Copyright Policy</a></span></div>
 				</div>
 				
 				<div class="col-sm-12 col-md-12 col-lg-4">
 					<h1 class="quick_text">Address</h1>
-					<div class="map_flag"><img src="images/map-flag.png"><span class="padding-left">Indore</span></div>
-					<div class="dolor_text"><img src="images/email-icon.png"><span class="padding-left">CoolName@gmail.com</span></div>
-					<div class="dolor_text"><img src="images/phone-icon.png"><span class="padding-left">+12345678</span></div>
+					<div class="dolor_text"><img src="{{ url_for('static', filename='images/home-icon.png')}}"><span class="padding-left">Indore</span></div>
+					<div class="dolor_text"><img src="{{ url_for('static', filename='images/email-icon.png')}}"><span class="padding-left">fake.news.detection@gmail.com</span></div>
+					<div class="dolor_text"><img src="{{ url_for('static', filename='images/phone-icon.png')}}"><span class="padding-left">+12345678</span></div>
 				</div>
 			</div>
 		</div>
