@@ -294,13 +294,13 @@ form.example button:hover {
 }
 
 .search_bt{
-     width: 90%;
+    
      float: left;
      color: #ffffff;
      background-color: #69c934;
      font-size: 14pt;
      border: 0px;
-     height: 55px;
+     
 }
 .menu{
      width: 100%;
@@ -339,6 +339,19 @@ form.example button:hover {
 .images{ width: 100%; float: left; }
 
 
+
+
+.modal-header{
+     background-color: #69c934;
+     text-anchor:floralwhite;
+ 
+    
+ }
+ 
+ .modal-body{
+     background-color:floralwhite ;
+     
+ }
 
 .eye-icon {
     width: 100%;
@@ -586,24 +599,7 @@ ul.social-network {
      margin: 0 5px;
    }
 
-   .social-network a.icoFacebook:hover {
-     background-color: #3B5998;
-   }
-   
-   .social-network a.icoLinkedin:hover {
-     background-color: #007bb7;
-   }
-
-   .social-network a.icoTwitter:hover {
-     background-color: #1DA1F2;
-   }
-   
-   .social-network a.icoGoogle:hover {
-     background-color: #DD4B39;
-   }
-   .social-network a.icoMail:hover {
-     background-color: #EA4335;
-   }
+  
    
    
 
@@ -650,13 +646,8 @@ ul.social-network {
      font-size: 14pt;
 }
 
-.map_flag{
-     width: 100%;
-    float: left;
-    font-size: 12pt;
-    color: #ffffff;
-    display: inline-flex;
-}
+
+
 
 .copyright{
      width: 100%;
