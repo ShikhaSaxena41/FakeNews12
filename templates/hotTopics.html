@@ -29,7 +29,23 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css')}}">
 <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.theme.default.min.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-
+<script>
+function validateForm() {
+	var x = document.forms["report"]["rname"].value;
+	if (x == "") {
+	  alert("Textarea must be filled out");
+	  return false;
+	}
+	if(document.getElementById('fake').checked == true) {   
+         return true;   
+	} else if(document.getElementById('real').checked == true){  
+         return true;   
+	}else{
+		alert("Select one option");
+		return false;
+	}  
+}
+</script>
 </head>
 <body>
 	
@@ -72,7 +88,7 @@
 				</div>
 				<div class="col-sm-6 col-lg-3">
 					<div class="search_main">
-                    <button class="submit_bt"><a href="#"><span class="doctor"></span>Report Result</a></button>
+                    <button class="submit_bt"><a class="nav-item nav-link" data-toggle="modal" data-target="#reportModal" role="button">Report Result</a></button>
 				    </div>
 				</div>
 			</div>
@@ -161,6 +177,49 @@
         </div>
     </div>
 
+
+	<div id="reportModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="color:floralwhite ; font-size: 25px;">Report</h4>
+                    <button type="button" class="close" data-dismiss="modal" id="closeButton">&times;</button>
+                </div>
+                <div class= "modal-body">
+					<!--   PLEASE PROVIDE ACTION TO THE FORM-->
+                    <form  name="report"    action ="{{url_for('home')}}"method ="POST">
+                        <div class="form-row">
+							<div class="col-sm-12">
+                         		<p style="font-size:large; padding-left: 0%;">Enter the newspiece whose result you think is wrong</p>   
+							</div>
+						</div>
+						<div class="form-row ">
+                            <div class="col-sm-12">
+								<textarea name="rname" class="form-control" id="enterText" placeholder="Enter TEXT"  ></textarea>
+							</div>
+                        </div>
+						<div class="form-group row" style="padding-top: 5px;">
+							
+							<div class=" col-sm-10" >
+								<div class="form-check form-check-inline">
+									<label class="form-check-label" style="font-size:large;"><input type="radio" name="radio" id="fake"> Fake News</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<label class="form-check-label" style="font-size:large; padding-left: 5px;"><input type="radio" name="radio" id="real"> Real News</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-row">
+							
+                            <button type="button" class="btn btn-primary btn-lg ml-auto" onclick="validateForm()">Report</button>
+                                    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 	<div class=" layout_padding promoted_sectipon">
 		<div class="container">
 			<h1 class="promoted_text">Headlines<span style="border-bottom: 5px solid #4bc714;"></span></h1>
@@ -178,10 +237,19 @@
 				{% endfor %}
 			</table>
 			{{ pagination.links }}
+
 		</div>
 	</div>
 	
-	
+	<nav aria-label="Page navigation example">
+		<ul class="pagination justify-content-center" style="margin:20px 0">
+		  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+		  <li class="page-item"><a class="page-link" href="#">1</a></li>
+		  <li class="page-item"><a class="page-link" href="#">2</a></li>
+		  <li class="page-item"><a class="page-link" href="#">3</a></li>
+		  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+		</ul>
+	  </nav>
 
 	<div class="layout_padding footer_section">
 		<div class="container">
@@ -210,7 +278,7 @@
 				<div class="col-sm-12 col-md-12 col-lg-4">
 					<h1 class="quick_text">Address</h1>
 					<div class="dolor_text"><img src="{{ url_for('static', filename='images/home-icon.png')}}"><span class="padding-left">Indore</span></div>
-					<div class="dolor_text"><img src="{{ url_for('static', filename='images/email-icon.png')}}"><span class="padding-left">fake.news.detection@gmail.com</span></div>
+					<div class="dolor_text"><img src="{{ url_for('static', filename='images/email-icon.png')}}"><span class="padding-left">CoolName@gmail.com</span></div>
 					<div class="dolor_text"><img src="{{ url_for('static', filename='images/phone-icon.png')}}"><span class="padding-left">+12345678</span></div>
 				</div>
 			</div>
